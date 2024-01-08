@@ -6,12 +6,16 @@ import { StyledContainerList, StyledList, StyledUserList } from './styles';
 const List = () => {
 	const [showOnlyActive, setShowOnlyActive] = useState(false);
 
-	const handleCheckboxChange = event => {
+	const showActiveorInactive = event => {
 		if (event.target.checked) {
 			setShowOnlyActive(true);
 		} else {
 			setShowOnlyActive(false);
 		}
+	};
+
+	const showUsersForName = event => {
+		// let word = event.target.value;
 	};
 
 	let filteredUsers = USERS;
@@ -23,14 +27,14 @@ const List = () => {
 		<StyledList>
 			<h1>Listado de usuarios</h1>
 			<StyledContainerList>
-				<input type='text' />
+				<input type='text' onChange={showUsersForName} />
 				<div>
 					<label htmlFor='active'>Solo activos</label>
 					<input
 						type='checkbox'
 						id='active'
 						checked={showOnlyActive}
-						onChange={handleCheckboxChange}
+						onChange={showActiveorInactive}
 					/>
 				</div>
 				<select>
@@ -40,14 +44,7 @@ const List = () => {
 			</StyledContainerList>
 			<StyledUserList>
 				{filteredUsers.map(user => (
-					<Users
-						key={user.userId}
-						name={user.name}
-						username={user.username}
-						status={user.status}
-						profileImage={user.profileImage}
-						color={user.color}
-					/>
+					<Users key={user.userId} {...user} />
 				))}
 			</StyledUserList>
 		</StyledList>

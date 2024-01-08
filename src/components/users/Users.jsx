@@ -7,7 +7,7 @@ import {
 	StyledUsers
 } from './styles';
 
-const Users = ({ name, username, status, profileImage, color }) => {
+const Users = ({ name, username, status, profileImage, active }) => {
 	return (
 		<StyledUsers>
 			<StyledInfoUser>
@@ -17,7 +17,7 @@ const Users = ({ name, username, status, profileImage, color }) => {
 					<StyledUsername>@{username}</StyledUsername>
 				</div>
 			</StyledInfoUser>
-			<StyledStatus color={color}>{status}</StyledStatus>
+			<StyledStatus active={active}>{status}</StyledStatus>
 		</StyledUsers>
 	);
 };

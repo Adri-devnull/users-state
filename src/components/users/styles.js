@@ -33,7 +33,7 @@ const StyledUsername = styled.p`
 `;
 
 const StyledStatus = styled.span`
-	color: ${({ color }) => color};
+	color: ${({ active }) => (active ? 'green' : 'red')};
 `;
 export {
 	StyledUsers,
