@@ -1,8 +1,24 @@
+import { useState } from 'react';
 import { USERS } from '../../constants/users';
 import Users from '../users/Users';
 import { StyledContainerList, StyledList, StyledUserList } from './styles';
 
 const List = () => {
+	const [showOnlyActive, setShowOnlyActive] = useState(false);
+
+	const handleCheckboxChange = event => {
+		if (event.target.checked) {
+			setShowOnlyActive(true);
+		} else {
+			setShowOnlyActive(false);
+		}
+	};
+
+	let filteredUsers = USERS;
+	if (showOnlyActive) {
+		filteredUsers = USERS.filter(user => user.active);
+	}
+
 	return (
 		<StyledList>
 			<h1>Listado de usuarios</h1>
@@ -10,7 +26,12 @@ const List = () => {
 				<input type='text' />
 				<div>
 					<label htmlFor='active'>Solo activos</label>
-					<input type='checkbox' id='active' />
+					<input
+						type='checkbox'
+						id='active'
+						checked={showOnlyActive}
+						onChange={handleCheckboxChange}
+					/>
 				</div>
 				<select>
 					<option value='0'>Por Defecto</option>
@@ -18,13 +39,14 @@ const List = () => {
 				</select>
 			</StyledContainerList>
 			<StyledUserList>
-				{USERS.map(user => (
+				{filteredUsers.map(user => (
 					<Users
 						key={user.userId}
 						name={user.name}
 						username={user.username}
 						status={user.status}
 						profileImage={user.profileImage}
+						color={user.color}
 					/>
 				))}
 			</StyledUserList>

@@ -31,4 +31,15 @@ const StyledUsername = styled.p`
 	font-size: 0.8em;
 	margin: 0;
 `;
-export { StyledUsers, StyledInfoUser, StyledImg, StyledName, StyledUsername };
+
+const StyledStatus = styled.span`
+	color: ${({ color }) => color};
+`;
+export {
+	StyledUsers,
+	StyledInfoUser,
+	StyledImg,
+	StyledName,
+	StyledUsername,
+	StyledStatus
+};

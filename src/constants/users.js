@@ -18,7 +18,8 @@ export const USERS = [
 		CreditCardNumber: '5549758287378574',
 		website: 'mark.biz',
 		active: true,
-		status: 'Activo'
+		status: 'Activo',
+		color: 'green'
 	},
 	{
 		userId: 'f0d07a91-e224-421c-9ade-274184545451',
@@ -39,7 +40,8 @@ export const USERS = [
 		CreditCardNumber: '5499849997356982',
 		website: 'katelynn.name',
 		active: false,
-		status: 'Inactivo'
+		status: 'Inactivo',
+		color: 'red'
 	},
 	{
 		userId: '1e4b5274-c11d-4bd8-a8bf-23aefd38555a',
@@ -60,7 +62,8 @@ export const USERS = [
 		CreditCardNumber: '5292692163848617',
 		website: 'emery.net',
 		active: true,
-		status: 'Activo'
+		status: 'Activo',
+		color: 'green'
 	},
 	{
 		userId: 'a1277d44-7401-4946-a89e-5fbe2fb54344',
@@ -81,7 +84,8 @@ export const USERS = [
 		CreditCardNumber: '5445071228794031',
 		website: 'autumn.com',
 		active: false,
-		status: 'Inactivo'
+		status: 'Inactivo',
+		color: 'red'
 	},
 	{
 		userId: '4cd323a9-d1ae-4e64-8237-6cb797192c42',
@@ -102,7 +106,8 @@ export const USERS = [
 		CreditCardNumber: '5522019882052622',
 		website: 'gloria.name',
 		active: false,
-		status: 'Inactivo'
+		status: 'Inactivo',
+		color: 'red'
 	},
 	{
 		userId: '33e40d94-28c7-45b8-b367-8ff0ccb79c8d',
@@ -123,7 +128,8 @@ export const USERS = [
 		CreditCardNumber: '5494629753312923',
 		website: 'lazaro.biz',
 		active: false,
-		status: 'Inactivo'
+		status: 'Inactivo',
+		color: 'red'
 	},
 	{
 		userId: '2aec7f93-e62b-4791-a921-b57f3df3eda3',
@@ -144,6 +150,7 @@ export const USERS = [
 		CreditCardNumber: '5493840647032129',
 		website: 'guillermo.info',
 		active: true,
-		status: 'Activo'
+		status: 'Activo',
+		color: 'green'
 	}
 ];
