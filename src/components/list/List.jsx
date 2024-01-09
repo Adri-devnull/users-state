@@ -4,37 +4,28 @@ import Users from '../users/Users';
 import { StyledContainerList, StyledList, StyledUserList } from './styles';
 
 const List = () => {
-	const [showOnlyActive, setShowOnlyActive] = useState(false);
+	const [filteredUsers, setFilteredUsers] = useState(USERS);
 
-	const showActiveorInactive = event => {
-		if (event.target.checked) {
-			setShowOnlyActive(true);
-		} else {
-			setShowOnlyActive(false);
-		}
+	const filteredByName = event => {
+		const letters = event.target.value;
+		const names = USERS.filter(user => user.name.startsWith(letters));
+		console.log(letters);
+		console.log(names);
 	};
-
-	const showUsersForName = event => {
-		// let word = event.target.value;
-	};
-
-	let filteredUsers = USERS;
-	if (showOnlyActive) {
-		filteredUsers = USERS.filter(user => user.active);
-	}
 
 	return (
 		<StyledList>
 			<h1>Listado de usuarios</h1>
 			<StyledContainerList>
-				<input type='text' onChange={showUsersForName} />
+				<input type='text' onChange={event => filteredByName(event)} />
 				<div>
 					<label htmlFor='active'>Solo activos</label>
 					<input
 						type='checkbox'
 						id='active'
-						checked={showOnlyActive}
-						onChange={showActiveorInactive}
+						onChange={event =>
+							showActiveorInactive(event, filteredUsers, setFilteredUsers)
+						}
 					/>
 				</div>
 				<select>
@@ -51,4 +42,12 @@ const List = () => {
 	);
 };
 
+const showActiveorInactive = (event, filteredUsers, setFilteredUsers) => {
+	if (event.target.checked) {
+		const onlyActiveUsers = filteredUsers.filter(user => user.active);
+		setFilteredUsers(onlyActiveUsers);
+	} else {
+		setFilteredUsers(USERS);
+	}
+};
 export default List;
