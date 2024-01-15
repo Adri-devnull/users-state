@@ -18,6 +18,7 @@ const Users = ({ name, username, status, profileImage, active }) => {
 				</div>
 			</StyledInfoUser>
 			<StyledStatus active={active}>{status}</StyledStatus>
+			<button>Ver detalles</button>
 		</StyledUsers>
 	);
 };
