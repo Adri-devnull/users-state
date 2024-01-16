@@ -1,13 +1,14 @@
 import {
 	StyledImg,
 	StyledInfoUser,
+	StyledLink,
 	StyledName,
 	StyledStatus,
 	StyledUsername,
 	StyledUsers
 } from './styles';
 
-const Users = ({ name, username, status, profileImage, active }) => {
+const Users = ({ userId, name, username, status, profileImage, active }) => {
 	return (
 		<StyledUsers>
 			<StyledInfoUser>
@@ -18,7 +19,7 @@ const Users = ({ name, username, status, profileImage, active }) => {
 				</div>
 			</StyledInfoUser>
 			<StyledStatus active={active}>{status}</StyledStatus>
-			<button>Ver detalles</button>
+			<StyledLink to={`/${userId}`}>Ver detalles</StyledLink>
 		</StyledUsers>
 	);
 };
