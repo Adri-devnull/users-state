@@ -18,7 +18,7 @@ const Users = ({ userId, name, username, status, profileImage, active }) => {
 					<StyledUsername>@{username}</StyledUsername>
 				</div>
 			</StyledInfoUser>
-			<StyledStatus active={active}>{status}</StyledStatus>
+			<StyledStatus $active={active}>{status}</StyledStatus>
 			<StyledLink to={`/${userId}`}>Ver detalles</StyledLink>
 		</StyledUsers>
 	);

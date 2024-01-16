@@ -34,7 +34,7 @@ const StyledUsername = styled.p`
 `;
 
 const StyledStatus = styled.span`
-	color: ${({ active }) => (active ? 'green' : 'red')};
+	color: ${({ $active }) => ($active ? 'green' : 'red')};
 `;
 
 const StyledLink = styled(Link)`

@@ -1,13 +1,14 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { USERS } from '../constants/users';
-import { StyledContainer } from './styles';
+import { StyledButton, StyledContainer } from './styles';
 
 const UserInfo = () => {
 	const { userId } = useParams();
 	const currentUser = USERS.find(user => user.userId === userId);
+	const navigate = useNavigate();
 	return (
 		<div>
-			<button>Back To Users</button>
+			<StyledButton onClick={() => navigate('/')}>Back To Users</StyledButton>
 			<h1>Hi! My name is {currentUser.name}</h1>
 			<img src={currentUser.profileImage} alt='' />
 			<p>Im {currentUser.age}</p>

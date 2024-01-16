@@ -6,4 +6,7 @@ const StyledContainer = styled.div`
 	gap: 20px;
 `;
 
-export { StyledContainer };
+const StyledButton = styled.button`
+	cursor: pointer;
+`;
+export { StyledContainer, StyledButton };
